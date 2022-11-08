@@ -1,14 +1,15 @@
+#!/bin/bash
 echo ""
 echo "======================================"
 echo "Test your Intuition with Guessing Game"
 echo "======================================"
 echo ""
-
+## Function for extracting total number of visiable files in the current directory
 function allvisfiles {
-	local num_files=$( ls -p | grep -v / | wc -l )
+	local num_files=$( ls -p | grep -v / | wc -l ) # The -p option tags the name of folders with "/" and the grep command exclude the tagged folders
 	echo $num_files
 }
-
+## Function that prompts the 
 function game {
 	local total_files=$(allvisfiles)
 	local status=1
@@ -16,7 +17,7 @@ function game {
 	do
 	echo "Guess the number of visiable files in the directory: "
 	read response
-		if ! [[ $response =~ ^[0-9]+$ ]]; then
+		if ! [[ $response =~ ^[0-9]+$ ]]; then #To check the user has only input an integer
          	   echo "Please integer only."
 		elif [[ $response == $total_files ]]; then
 		   echo "Congratulation! You have sharp Intuition!!"
@@ -29,5 +30,6 @@ function game {
 		fi
 	done
 }
+#Calling the function game to Run the guessinggame
 game
 
