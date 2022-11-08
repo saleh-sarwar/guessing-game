@@ -9,7 +9,7 @@ function allvisfiles {
 	local num_files=$( ls -p | grep -v / | wc -l ) # The -p option tags the name of folders with "/" and the grep command exclude the tagged folders
 	echo $num_files
 }
-## Function that prompts the 
+## The main function that prompts the user to guess
 function game {
 	local total_files=$(allvisfiles)
 	local status=1
