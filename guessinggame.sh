@@ -4,7 +4,7 @@ echo "======================================"
 echo "Test your Intuition with Guessing Game"
 echo "======================================"
 echo ""
-## Function for extracting total number of visiable files in the current directory
+## Function for extracting total number of visible files in the current directory
 function allvisfiles {
 	local num_files=$( ls -p | grep -v / | wc -l ) # The -p option tags the name of folders with "/" and the grep command exclude the tagged folders
 	echo $num_files
