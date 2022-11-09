@@ -6,7 +6,7 @@ echo "======================================"
 echo ""
 ## Function for extracting total number of visible files in the current directory
 function allvisfiles {
-	local num_files=$( ls -p | grep -v / | wc -l ) # The -p option tags the name of folders with "/" and the grep command exclude the tagged folders
+	local num_files=$( ls -p | grep -v / | wc -l ) # The -p option tags the name of folders with "/" and the grep command with -v excludes the tagged folders
 	echo $num_files
 }
 ## The main function that prompts the user to guess
